@@ -1,0 +1,10 @@
+{
+  "prefix": ".",
+  "token": "ODk5NDUzNjQ3OTEyNTk5NTcz.YWy_fA.1JNwLDz5UOteuhgLDAJyNFK6YvQ",
+  "mongodb": "mongodb+srv://admin:aPSE2pH3UFVZfJi@cluster0.neeb6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "website": "https://marouka.xyz",
+  "invite": "https://discord.com/oauth2/authorize?client_id=899453647912599573&scope=bot%20applications.commands&permissions=1099511627775&redirect_uri=https%3A%2F%2Fmarouka.xyz%2Fwelcome",
+  "support": "https://discord.gg/Tvnwxvj9DS",
+  "developers": ["528637169544331291"],
+  "dscgg": "1f394556-d0e4-46a1-8098-326c4f70702f"
+}
