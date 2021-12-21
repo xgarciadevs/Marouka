@@ -1,18 +1,18 @@
-const { MessageEmbed } = require('discord.js');
+const { Discord, MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: 'snipe',
-  description: 'Snipe the most recently deleted message.',
-  usage: 'snipe',
+  name: "snipe",
+  description: "Snipe the last deleted message.",
+  usage: "snipe",
   aliases: [],
-  category: 'Moderation',
+  category: "Moderation",
   cooldown: 3,
   enabled: true,
   nsfw: false,
   devOnly: false,
-  guildOnly: false,
+  guildOnly: true,
   async execute(client, message, args) {
-    let msg = client.snipes.get(message.channel.id);
+    const msg = client.snipes.get(message.channel.id);
 
     try {
       let embed = new MessageEmbed()
@@ -21,7 +21,7 @@ module.exports = {
         .setColor('RANDOM')
       message.reply({ embeds: [embed] });
     } catch {
-      message.reply('There is nothing to snipe :/');
-    };
+      message.reply('There is nothing to snipe!')
+    }
   }
 }

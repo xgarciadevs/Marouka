@@ -22,6 +22,18 @@ module.exports = async (client, message) => {
       return message.reply({ embeds: [disabledEmbed] })
     };
 
+    if (command.nsfw) {
+      if (!message.channel.nsfw) {
+        const nsfwEmbed = new MessageEmbed()
+        .setTitle('<:error:919657675820789780> Oops!')
+        .setDescription('This is an NSFW command, please run it inside of a NSFW channel.')
+        .setImage('https://support.discord.com/hc/article_attachments/115000272351/thisisnsfw.png')
+        .setColor('RED')
+
+      return message.reply({ embeds: [nsfwEmbed] })
+      }
+    };
+
     if (command.guildOnly && message.channel.type === 'dm') {
       const dmEmbed = new MessageEmbed()
         .setDescription(`I can't execute that command inside DMs!`)
