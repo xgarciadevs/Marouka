@@ -171,10 +171,10 @@ module.exports = {
             .setColor('PURPLE')
 
           initmessage.edit({ embeds: [funEmbed], components: components(false, "Select your category here") })
-        } else if (value === 'fun') {
-          const funEmbed = new MessageEmbed()
+        } else if (value === 'game') {
+          const gameEmbed = new MessageEmbed()
             .setTitle('<:controller:920459380799987752> Marouka Help Menu | Game Commands')
-            .setDescription(`To get help with a specific command, use: \`${prefix}help [command name]\`\n\`\`\`${gameCmds || 'No commands exist.'}\`\`\``)
+            .setDescription(`To get help with a specific command, use: \`${prefix}help [command name]\`\n\`\`\`${gameEmbed || 'No commands exist.'}\`\`\``)
             .setColor('PURPLE')
 
           initmessage.edit({ embeds: [funEmbed], components: components(false, "Select your category here") })
