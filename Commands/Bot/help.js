@@ -21,6 +21,7 @@ module.exports = {
     var botCmds = '';
     var economyCmds = '';
     var funCmds = '';
+    var gameCmds = '';
     var hsnfwCmds = '';
     var imageCmds = '';
     var moderationCmds = '';
@@ -31,6 +32,7 @@ module.exports = {
     fs.readdirSync('./Commands/Bot').forEach((file) => botCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
     fs.readdirSync('./Commands/Economy').forEach((file) => economyCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
     fs.readdirSync('./Commands/Fun').forEach((file) => funCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
+    fs.readdirSync('./Commands/Games').forEach((file) => gameCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
     fs.readdirSync('./Commands/HNSFW').forEach((file) => hsnfwCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
     fs.readdirSync('./Commands/Image').forEach((file) => imageCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
     fs.readdirSync('./Commands/Moderation').forEach((file) => moderationCmds += `${prefix}${file.slice(0, file.lastIndexOf('.'))} `);
@@ -78,6 +80,12 @@ module.exports = {
                 label: 'Fun',
                 value: 'fun',
                 description: '8ball, ShowerThoughts, and other related commands.',
+                // emoji: '<:controller:920459380799987752>'
+              },
+              {
+                label: 'Game',
+                value: 'game',
+                description: 'NeverHaveIEver, Slots, and other related commands.',
                 emoji: '<:controller:920459380799987752>'
               },
               {
@@ -158,8 +166,15 @@ module.exports = {
           initmessage.edit({ embeds: [economyEmbed], components: components(false, "Select your category here") })
         } else if (value === 'fun') {
           const funEmbed = new MessageEmbed()
-            .setTitle('<:controller:920459380799987752> Marouka Help Menu | Fun Commands')
+            .setTitle('Marouka Help Menu | Fun Commands')
             .setDescription(`To get help with a specific command, use: \`${prefix}help [command name]\`\n\`\`\`${funCmds || 'No commands exist.'}\`\`\``)
+            .setColor('PURPLE')
+
+          initmessage.edit({ embeds: [funEmbed], components: components(false, "Select your category here") })
+        } else if (value === 'fun') {
+          const funEmbed = new MessageEmbed()
+            .setTitle('<:controller:920459380799987752> Marouka Help Menu | Game Commands')
+            .setDescription(`To get help with a specific command, use: \`${prefix}help [command name]\`\n\`\`\`${gameCmds || 'No commands exist.'}\`\`\``)
             .setColor('PURPLE')
 
           initmessage.edit({ embeds: [funEmbed], components: components(false, "Select your category here") })

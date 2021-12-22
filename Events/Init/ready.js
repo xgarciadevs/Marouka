@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const chalk = require('chalk')
 
 module.exports = async (client, message) => {
-  client.user.setActivity({ name: `${client.guilds.cache.size} servers! | Beta Access Week! | ${client.prefix}help`, type: 'WATCHING' });
+  client.user.setActivity({ name: `${client.guilds.cache.size} servers! | ${client.prefix}help`, type: 'WATCHING' });
   console.log(chalk.magenta('[client] ') + chalk.white(`${client.user.username}(${client.user.tag}) is now online!`));
 
   let botRestartEmbed = new MessageEmbed()
