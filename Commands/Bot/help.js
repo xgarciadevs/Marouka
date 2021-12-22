@@ -177,7 +177,7 @@ module.exports = {
             .setDescription(`To get help with a specific command, use: \`${prefix}help [command name]\`\n\`\`\`${gameEmbed || 'No commands exist.'}\`\`\``)
             .setColor('PURPLE')
 
-          initmessage.edit({ embeds: [funEmbed], components: components(false, "Select your category here") })
+          initmessage.edit({ embeds: [gameEmbed], components: components(false, "Select your category here") })
         } else if (value === 'hnsfw') {
           const funEmbed = new MessageEmbed()
             .setTitle('<:18plus:920459380888076348> Marouka Help Menu | Hentai NSFW Commands')
